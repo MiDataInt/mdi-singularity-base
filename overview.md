@@ -1,5 +1,5 @@
 ---
-title: "Repository Title"
+title: "MDI Singularity Base"
 has_children: false
 nav_order: 0
 ---
@@ -10,14 +10,7 @@ nav_order: 0
 {% include mdi-project-overview.md %} 
 
 
-Replace this text with markdown content describing your tool suite.
-
-See [Markdown Basics](https://www.markdownguide.org/basic-syntax/)
-to get started - it is very easy to write your documentation content 
-using markdown.
-
-The contents in this file are the default, i.e., first, page of 
-your documentation.
+Empty tool suite used to create base Singularity container images with R Shiny installed
 
 
 <!-- please do not alter the next line -->
