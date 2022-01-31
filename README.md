@@ -8,18 +8,20 @@ It was launched using the MDI suite template:
 
 and modified via '_config.yml' and 'singularity.def'
 to add support for suite-level containers offering both pipelines and apps.
-
-
 The consequence is that:
 
 ```bash
-mdi build MiDataInt/mdi-singularity-base
+mdi build --suite MiDataInt/mdi-singularity-base
 ```
 
-will create a container image
-with a base R installation with full Shiny support. Those images are pushed
-to the MiDataInt GitHub Container Registry where they are automatically pulled
-and used by MDI install and run actions on a system where Singularity is available.
+will create a container image with a base R installation with full Shiny support. 
+The image also has conda installed and ready to create pipeline-specific 
+environments if requested by downstream suite-level containers that list
+mdi-singularity-base as their 'From' image in singularity.def.
+
+Those resulting base image is pushed
+to the MiDataInt GitHub Container Registry where it can be automatically pulled
+and used by MDI install actions on a system where Singularity is available.
 Installation is much faster in this scenario.
 
 ## Versioning scheme
@@ -39,3 +41,20 @@ the patch version of this repostiory is **not** the same as the patch verion of 
 Together, this repository is tagged in a typical fashion as 
 '**major**.**minor**.patch', 
 where the bolded components correspond to the R version set in 'singularity.def'.
+
+## Using mdi-singularity-base images
+
+MDI base images are used in two ways.  First, they can be set by a developer 
+as the base image for a suite-level container as follows:
+
+```bash
+# SUITE_NAME/singularity.def
+Bootstrap: oras
+From: ghcr.io/MiDataInt/mdi-singularity-base:v4.1
+Stage: build
+```
+
+Alternatively, they can be requested by any user during the MDI
+install process on a system with Singularity installed, by simply
+providing the requested major.minor R version - the installer 
+pulls and uses the appropriate base image, if available.
