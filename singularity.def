@@ -22,5 +22,7 @@ Stage: build
         libpng-dev \
         libjpeg-dev \
         pkg-config \
-        build-essential
+        build-essential \
+        libgit2-dev \
+        libssh2-1-dev
 #------------------------------------------------------------------------------
