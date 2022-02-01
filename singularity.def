@@ -18,7 +18,6 @@ Stage: build
         zlib1g-dev \
         libxml2 \
         libxml2-dev \
-        libssl-dev \
         libpng-dev \
         libjpeg-dev \
         pkg-config \
