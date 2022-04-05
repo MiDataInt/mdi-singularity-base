@@ -1,3 +1,16 @@
+---
+# DISABLED
+
+As of 2022-04-05, mdi-singularity-base is disabled and not used by the MDI.
+It proved difficult to maintain consistency in R package compilation due to lib stddef.h.
+As the gain was incremental, preference was given to promoting the use of multiple
+CPUs for apps server installation via consistent availability of option --n-cpu
+in shell commands and batch scripts.
+
+---
+
+
+
 # mdi-singularity-base
 
 This is an empty tool suite used by MDI project maintainers 
