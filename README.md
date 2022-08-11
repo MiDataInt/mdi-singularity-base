@@ -1,13 +1,17 @@
-# OBSOLETE
+# OBSOLETE and DISABLED
 
-Until further notice, the **MDI no longer supports containers
-for running MDI Stage 2 app servers** - it created conflicts
-related to changing system libraries and provided marginal benefits.
+As of 2022-04-05, mdi-singularity-base is disabled and not used by the MDI.
+It proved difficult to maintain consistency in R package compilation due to lib stddef.h.
+As the gain was incremental, preference was given to promoting the use of multiple
+CPUs for apps server installation via consistent availability of option --n-cpu
+in shell commands and batch scripts.
 
 Since the main purpose of this repository was to create a container
-with the R and R packages installed, it no longer has any use.
+with the R and R packages installed, it no longer has any utility.
 Developers should simply use a standard OS image when
 creating containers for Stage 1 pipelines, which is still recommended.
+
+---
 
 # MDI Singularity Base
 
