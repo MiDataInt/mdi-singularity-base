@@ -1,4 +1,20 @@
-# mdi-singularity-base
+# OBSOLETE
+
+Until further notice, the **MDI no longer supports containers
+for running MDI Stage 2 app servers** - it created conflicts
+related to changing system libraries and provided marginal benefits.
+
+Since the main purpose of this repository was to create a container
+with the R and R packages installed, it no longer has any use.
+Developers should simply use a standard OS image when
+creating containers for Stage 1 pipelines, which is still recommended.
+
+# MDI Singularity Base
+
+The [Michigan Data Interface](https://midataint.github.io/) (MDI) 
+is a framework for developing, installing and running 
+Stage 1 HPC **pipelines** and Stage 2 interactive web applications 
+(i.e., **apps**) in a standardized design interface.
 
 This is an empty tool suite used by MDI project maintainers 
 to create base Singularity container images with R Shiny installed.
@@ -6,7 +22,7 @@ It was launched using the MDI suite template:
 
 - <https://github.com/MiDataInt/mdi-suite-template.git>
 
-and modified via '_config.yml' and 'singularity.def'
+and modified via __config.yml_ and _singularity.def_
 to add support for suite-level containers offering both pipelines and apps.
 The consequence is that:
 
@@ -36,11 +52,11 @@ by adding matching release tags to this repository on GitHub.
 
 If something in this repository needs to change while maintaining the same R version,
 the patch number on the tag can be incremented. Thus, it is important to remember that
-the patch version of this repostiory is **not** the same as the patch verion of R.
+the patch version of this repository is **not** the same as the patch version of R.
 
 Together, this repository is tagged in a typical fashion as 
 '**major**.**minor**.patch', 
-where the bolded components correspond to the R version set in 'singularity.def'.
+where the bolded components correspond to the R version set in _singularity.def_.
 
 ## Using mdi-singularity-base images
 
